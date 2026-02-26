@@ -1,5 +1,5 @@
 import { Play, Radio, Users } from 'lucide-react';
-import { usePlayer } from '../hooks/usePlayer';
+import { usePlayer } from '../hooks/PlayerContext';
 
 export default function StationCard({ station }) {
   const { playStation, activeStation, isPlaying } = usePlayer();

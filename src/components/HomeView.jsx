@@ -1,6 +1,8 @@
 import { Sparkles, TrendingUp, Clock } from 'lucide-react';
 import StationCard from './StationCard';
 import PlaylistCard from './PlaylistCard';
+import NowPlayingBar from './NowPlayingBar';
+import { usePlayer } from '../hooks/PlayerContext';
 import { stations, playlists, recentlyPlayed } from '../data/stations';
 
 function Greeting() {
@@ -19,10 +21,11 @@ function Greeting() {
   );
 }
 
-function SectionHeader({ icon: Icon, title, subtitle }) {
+function SectionHeader({ icon, title, subtitle }) {
+  const IconComp = icon;
   return (
     <div className="flex items-center gap-2 mb-4">
-      <Icon size={18} className="text-brand-400" />
+      <IconComp size={18} className="text-brand-400" />
       <h3 className="text-lg font-bold text-white">{title}</h3>
       {subtitle && <span className="text-xs text-white/30 ml-1">{subtitle}</span>}
     </div>
@@ -30,10 +33,21 @@ function SectionHeader({ icon: Icon, title, subtitle }) {
 }
 
 export default function HomeView() {
-  return (
-    <div className="flex-1 overflow-y-auto p-6 lg:p-8">
-      <Greeting />
+  const { activeStation } = usePlayer();
 
+  return (
+    <div className="flex-1 overflow-y-auto">
+      <div className="p-6 lg:p-8">
+        <Greeting />
+      </div>
+
+      {activeStation && (
+        <div className="px-6 lg:px-8">
+          <NowPlayingBar />
+        </div>
+      )}
+
+      <div className="px-6 lg:px-8 pb-6">
       <section className="mb-10">
         <SectionHeader icon={Sparkles} title="Live Stations" subtitle="Tune in now" />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -85,6 +99,7 @@ export default function HomeView() {
           </table>
         </div>
       </section>
+      </div>
     </div>
   );
 }

@@ -63,12 +63,13 @@ export default function Sidebar({ activeView, onNavigate }) {
       )}
 
       <nav className="flex-1 px-3 space-y-1 overflow-y-auto">
-        {navItems.map(({ icon: Icon, label, id }) => {
-          const isActive = activeView === id;
+        {navItems.map((item) => {
+          const isActive = activeView === item.id;
+          const IconComp = item.icon;
           return (
             <button
-              key={id}
-              onClick={() => onNavigate(id)}
+              key={item.id}
+              onClick={() => onNavigate(item.id)}
               className={`
                 w-full flex items-center gap-3 rounded-lg transition-all duration-200
                 ${collapsed ? 'justify-center px-0 py-3' : 'px-3 py-2.5'}
@@ -77,11 +78,11 @@ export default function Sidebar({ activeView, onNavigate }) {
                   : 'text-white/50 hover:text-white/80 hover:bg-white/5'
                 }
               `}
-              title={collapsed ? label : undefined}
+              title={collapsed ? item.label : undefined}
             >
-              <Icon size={20} className={isActive ? 'text-brand-400' : ''} />
+              <IconComp size={20} className={isActive ? 'text-brand-400' : ''} />
               {!collapsed && (
-                <span className="text-sm font-medium">{label}</span>
+                <span className="text-sm font-medium">{item.label}</span>
               )}
               {isActive && !collapsed && (
                 <div className="ml-auto w-1.5 h-1.5 rounded-full bg-brand-400" />

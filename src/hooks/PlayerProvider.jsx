@@ -1,8 +1,7 @@
-import { createContext, useContext, useState, useCallback } from 'react';
+import { useState, useCallback } from 'react';
+import { PlayerContext } from './PlayerContext';
 
-const PlayerContext = createContext(null);
-
-export function PlayerProvider({ children }) {
+export default function PlayerProvider({ children }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTrack, setCurrentTrack] = useState({
     title: 'Welcome to Christian.FM',
@@ -64,10 +63,4 @@ export function PlayerProvider({ children }) {
       {children}
     </PlayerContext.Provider>
   );
-}
-
-export function usePlayer() {
-  const ctx = useContext(PlayerContext);
-  if (!ctx) throw new Error('usePlayer must be used within PlayerProvider');
-  return ctx;
 }

@@ -13,7 +13,7 @@ import {
   Maximize2,
   Music2,
 } from 'lucide-react';
-import { usePlayer } from '../hooks/usePlayer';
+import { usePlayer } from '../hooks/PlayerContext';
 
 function formatTime(seconds) {
   if (!seconds || seconds <= 0) return '0:00';
