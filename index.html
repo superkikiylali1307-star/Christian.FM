@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Christian.FM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="top-nav">
+        <div class="brand">Christian<span>.FM</span></div>
+        <nav aria-label="Primary navigation">
+          <a href="#">Home</a>
+          <a href="#">Live</a>
+          <a href="#">Stations</a>
+          <a href="#">Prayer</a>
+        </nav>
+        <button class="btn ghost" type="button">Submit Song Ideas</button>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">24/7 Faith-Based Radio</p>
+            <h1>Music that lifts your spirit.</h1>
+            <p>
+              Welcome to Christian.FM, your home for worship, praise, and
+              uplifting music. Tell us what songs you want next, and we will
+              shape the stream around your favorites.
+            </p>
+
+            <div class="hero-actions">
+              <button id="playBtn" class="btn primary" type="button">
+                Play Demo Stream
+              </button>
+              <button class="btn secondary" type="button">
+                Browse Stations
+              </button>
+            </div>
+
+            <div class="meta-row">
+              <div class="meta-chip">
+                <span>Live listeners</span>
+                <strong>12,840</strong>
+              </div>
+              <div class="meta-chip">
+                <span>Stations</span>
+                <strong>8</strong>
+              </div>
+              <div class="meta-chip">
+                <span>Uptime</span>
+                <strong>99.9%</strong>
+              </div>
+            </div>
+          </div>
+
+          <aside class="now-playing card" aria-live="polite">
+            <h2>Now Playing</h2>
+            <div class="track-art" aria-hidden="true">CFM</div>
+            <div class="track-info">
+              <p id="trackTitle" class="track-title">Waiting for your playlist</p>
+              <p id="trackArtist" class="track-artist">
+                Add your first songs any time.
+              </p>
+            </div>
+
+            <div class="progress" aria-hidden="true">
+              <span id="progressBar"></span>
+            </div>
+
+            <div class="transport">
+              <button type="button" aria-label="Previous track">Prev</button>
+              <button type="button" aria-label="Pause">Pause</button>
+              <button type="button" aria-label="Next track">Next</button>
+              <time id="liveClock" datetime="">--:--</time>
+            </div>
+          </aside>
+        </section>
+
+        <section class="grid-section">
+          <article class="card">
+            <h3>Featured Stations</h3>
+            <ul class="station-list">
+              <li>
+                <span>Worship Now</span>
+                <small>Modern praise anthems</small>
+              </li>
+              <li>
+                <span>Gospel Gold</span>
+                <small>Classics and timeless hymns</small>
+              </li>
+              <li>
+                <span>Peaceful Prayer</span>
+                <small>Quiet instrumental devotionals</small>
+              </li>
+              <li>
+                <span>Youth Revival</span>
+                <small>Fresh Christian pop and rap</small>
+              </li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Daily Rhythm</h3>
+            <ul class="schedule">
+              <li>
+                <span>Morning Hope</span>
+                <time>6:00 AM</time>
+              </li>
+              <li>
+                <span>Midday Joy</span>
+                <time>12:00 PM</time>
+              </li>
+              <li>
+                <span>Evening Worship</span>
+                <time>6:00 PM</time>
+              </li>
+              <li>
+                <span>Night Prayer</span>
+                <time>10:00 PM</time>
+              </li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Coming Up Next</h3>
+            <ul id="queueList" class="queue-list">
+              <li>Share your songs to fill this queue.</li>
+              <li>We can add artist spotlights and themes.</li>
+              <li>Perfect place for listener requests.</li>
+            </ul>
+          </article>
+        </section>
+
+        <section class="cta card">
+          <h3>Help shape Christian.FM</h3>
+          <p>
+            Send your artists and tracks. We will build your personalized faith
+            radio experience in the next update.
+          </p>
+          <div class="cta-tags">
+            <span>Worship</span>
+            <span>Gospel</span>
+            <span>Praise</span>
+            <span>Contemporary Christian</span>
+            <span>Devotional</span>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <p>Christian.FM - Streaming faith, hope, and love.</p>
+      </footer>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
